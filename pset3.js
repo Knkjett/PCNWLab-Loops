@@ -8,7 +8,15 @@
     @example - getMiddle([1,2,3); // [3]
                getMiddle([1,2,3,4]); // [2,3]
 */
-
+const getMiddle = arr => {
+    let bound = Math.floor(arr.length/2);
+    arr.splice(0,bound);
+    arr.splice(bound,arr.length)
+    return arr;
+}
+console.log('---getMiddle---');
+console.log("The Middle of [1,2,3] is",getMiddle([1,2,3]));
+console.log("The Middle of [1,2,3,4] is",getMiddle([1,2,3,4]));
 /*
     @func addToMiddle
     @param {array} arr
@@ -20,7 +28,15 @@
     @example - addToMiddle([1,2,3], 0); // [1,2,0,3];
                addToMiddle([1,2,3,4], 0); // [1,2,0,3,4]
 */
-
+const addToMiddle = (arr,val) => {
+    let bound = Math.ceil(arr.length/2);
+    arr.splice(bound,0,val);
+    //arr.splice(bound,arr.length)
+    return arr;
+}
+console.log('\n---addToMiddle---');
+console.log("Adding 0 to the Middle of [1,2,3] is",addToMiddle([1,2,3],0));
+console.log("Adding 0 to the Middle of [1,2,3,4] is",addToMiddle([1,2,3,4],0));
 /*
     @func hasAtSymbol
     @param {string} email
@@ -29,7 +45,16 @@
     @example - hasAtSymbol('taq@karim.com'); // true
                hasAtSymbol('foobar'); // false
 */
-
+const hasAtSymbol = str => {
+    for(let i = 0; i < str.length; i++){
+        if(str[i] =='@')
+            return true;
+    }
+    return false;
+}
+console.log('\n---hasAtSymbol---');
+console.log("Does 'taq@karim.com' have a symbol?",hasAtSymbol('taq@karim.com'));
+console.log("Does 'foobar' have a symbol?",hasAtSymbol('foobar'));
 /*
     @func capitalize
     @param {string} str
@@ -39,7 +64,14 @@
     @example - capitalize('taq'); // 'Taq'
                capitalize('Taq'); // 'Taq'
 */
-
+const capitalize = str => {
+    if(str[0] > String.fromCharCode(90))
+        str[0].charcode()-32;
+    return str;
+}
+let test = 
+console.log(String.fromCharCode('87'))
+console.log('taq');
 /*
     @func isAllUpperCased
     @param {string} str

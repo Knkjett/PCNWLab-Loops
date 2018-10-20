@@ -24,7 +24,7 @@ console.log("average of the numbers [1,2,3,4] is " , average([1,2,3,4]));
 */
 const squareEach = arr => {
     for(let i = 0; i < arr.length; i++){
-        arr[i] = (i+1)*(i+1);
+        arr[i] = arr[i]*arr[i];
     }
     return arr;
 }
@@ -46,7 +46,7 @@ console.log("[1,2,3,4] squared is " , squareEach([1,2,3,4]));
 const averageSquare = arr => {
     let avg = 0;
     for(let i = 0; i < arr.length; i++){
-        arr[i] = (i+1)*(i+1);
+        arr[i] = arr[i]*arr[i];
         avg += arr[i];
     }
     return avg/arr.length;
